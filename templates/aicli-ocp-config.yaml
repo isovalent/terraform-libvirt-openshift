@@ -1,0 +1,15 @@
+openshift_version: ${ocp_version} 
+vip_dhcp_allocation: false
+user_managed_networking: true
+password: true
+base_dns_domain: ${ocp_base_domain}
+network_type: Cilium
+pull_secret: /aicli/openshift_pull.json
+installconfig:
+  networking:
+    networkType: Cilium
+    machineNetwork:
+    - cidr: ${vm_private_network_ipv4_cidr}
+%{ if vm_private_network_ipv6_cidr != "" }
+    - cidr: ${vm_private_network_ipv6_cidr}
+%{ endif }

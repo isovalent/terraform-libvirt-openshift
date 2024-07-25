@@ -1,0 +1,74 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    rebase-strategy: "disabled"
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  - package-ecosystem: "terraform"
+    directory: /aws-eks-eni
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  - package-ecosystem: "terraform"
+    directory: /aws-eks-eni-clustermesh
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  - package-ecosystem: "terraform"
+    directory: /aws-eks-ext-etcd-vpc-cni-chaining
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  - package-ecosystem: "terraform"
+    directory: /aws-eks-vpc-cni-chaining
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  - package-ecosystem: "terraform"
+    directory: /aws-kubeadm
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  - package-ecosystem: "terraform"
+    directory: /aws-rke
+    schedule:
+      interval: "daily"
+      time: "23:00"
+      timezone: "Europe/Zurich"
+    open-pull-requests-limit: 3
+    labels:
+      - ci/dependabot
+      - kind/enhancement
+  
