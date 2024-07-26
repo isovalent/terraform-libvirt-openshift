@@ -127,5 +127,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ocp_path_to_kubeconfig_file"></a> [ocp\_path\_to\_kubeconfig\_file](#output\_ocp\_path\_to\_kubeconfig\_file) | n/a |
+| <a name="output_ocp_path_to_kubeconfig_file"></a> [ocp\_path\_to\_kubeconfig\_file](#output\_ocp\_path\_to\_kubeconfig\_file) | ocp kubeconfig location to access the k8s api server |
 <!-- END_TF_DOCS -->
