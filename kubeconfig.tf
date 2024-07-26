@@ -42,7 +42,7 @@ resource "local_file" "ocp_kubeadmin_password" {
 
 output "ocp_path_to_kubeconfig_file" {
   description = "ocp kubeconfig location to access the k8s api server"
-  value = local_file.ocp_kubeconfig.filename
+  value       = local_file.ocp_kubeconfig.filename
 
 }
 
