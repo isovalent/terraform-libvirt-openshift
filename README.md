@@ -101,7 +101,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aicli_version"></a> [aicli\_version](#input\_aicli\_version) | aicli version | `string` | `"99.0.202403282009"` | no |
-| <a name="input_calico_version"></a> [calico\_version](#input\_calico\_version) | calico version for the ocp please check https://github.com/isovalent/calico-ee-olm since olm has a different life cycle from helm release | `string` | n/a | yes |
+| <a name="input_calico_version"></a> [calico\_version](#input\_calico\_version) | calico version for the ocp | `string` | n/a | yes |
 | <a name="input_kube_api_server_ip"></a> [kube\_api\_server\_ip](#input\_kube\_api\_server\_ip) | kube api server ip address, since we use the private FQDN, setting this will run post\_install\_script resource to override the /etct/hosts files | `string` | `""` | no |
 | <a name="input_kvm_host_ip_address"></a> [kvm\_host\_ip\_address](#input\_kvm\_host\_ip\_address) | kvm host ip address for OCP VM deployment | `string` | n/a | yes |
 | <a name="input_kvm_host_username"></a> [kvm\_host\_username](#input\_kvm\_host\_username) | kvm host username for OCP VM deployment | `string` | `"root"` | no |
@@ -115,7 +115,6 @@ No modules.
 | <a name="input_ocp_version"></a> [ocp\_version](#input\_ocp\_version) | openshift version | `string` | `4.14` | no |
 | <a name="input_ocp_worker_ip_mac_hostname_map"></a> [ocp\_worker\_ip\_mac\_hostname\_map](#input\_ocp\_worker\_ip\_mac\_hostname\_map) | worker\_ip\_mac\_host\_map from terraform-equinix-infra module. If provided, it will get the static IP address and FQDN mapping predefined in terraform-equinix-infra's router | `string` | `""` | no |
 | <a name="input_ocp_workers_count"></a> [ocp\_workers\_count](#input\_ocp\_workers\_count) | the number of the OCP worker VM. | `number` | `2` | no |
-| <a name="input_path_to_calico_config"></a> [path\_to\_calico\_config](#input\_path\_to\_calico\_config) | path to calico config for ocp | `string` | n/a | yes |
 | <a name="input_path_to_kvm_host_login_ssh_key"></a> [path\_to\_kvm\_host\_login\_ssh\_key](#input\_path\_to\_kvm\_host\_login\_ssh\_key) | private ssh key to login the kvm host | `string` | n/a | yes |
 | <a name="input_path_to_ocp_pull_secret"></a> [path\_to\_ocp\_pull\_secret](#input\_path\_to\_ocp\_pull\_secret) | the ocp pull secret, the pull secret should match your redhat account for the offline\_token. you can get it from here https://console.redhat.com/openshift/install/pull-secret | `string` | `""` | no |
 | <a name="input_path_to_ocp_setup_private_key"></a> [path\_to\_ocp\_setup\_private\_key](#input\_path\_to\_ocp\_setup\_private\_key) | private key to setup the ocp cluster | `string` | n/a | yes |
