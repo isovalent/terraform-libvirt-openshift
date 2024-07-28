@@ -8,7 +8,7 @@ resource "local_file" "aicli_ocp_config" {
   filename = "${path.module}/tmp/aicli-ocp-config-${var.ocp_cluster_name}.yaml"
 }
 
-resource "null_resource" "aicli_cilium_setup" {
+resource "null_resource" "aicli_calico_setup" {
   depends_on = [local_file.aicli_ocp_config]
 
   connection {
@@ -39,23 +39,19 @@ resource "null_resource" "aicli_cilium_setup" {
 
   }
   provisioner "file" {
-    source      = "${path.module}/scripts/setup-aicli-cilium.sh"
-    destination = "/aicli/setup-aicli-cilium.sh"
-  }
-  provisioner "file" {
-    source      = var.path_to_cilium_config
-    destination = "/aicli/cluster-network-07-cilium-ciliumconfig.yaml"
+    source      = "${path.module}/scripts/setup-aicli-calico.sh"
+    destination = "/aicli/setup-aicli-calico.sh"
   }
   provisioner "remote-exec" {
     inline = [<<EOF
       set -o errexit
-      chmod +x /aicli/setup-aicli-cilium.sh;
+      chmod +x /aicli/setup-aicli-calico.sh;
       export OCP_OFFLINE_TOKEN="${var.ocp_offline_token}";
       export OCP_CLUSTER_NAME="${var.ocp_cluster_name}";
       export OCP_BASE_DOMAIN="${var.ocp_base_domain}";
       export AICLI_VERSION="${var.aicli_version}";
-      export CILIUM_VERSION="${var.cilium_version}";
-      /aicli/setup-aicli-cilium.sh;
+      export CALICO_VERSION="${var.calico_version}";
+      /aicli/setup-aicli-calico.sh;
       sleep 1
     EOF
     ]

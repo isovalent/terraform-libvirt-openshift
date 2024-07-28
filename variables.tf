@@ -85,14 +85,10 @@ variable "path_to_ocp_setup_private_key" {
 
 }
 
-variable "path_to_cilium_config" {
-  description = "path to cilium config for ocp"
-  type        = string
 
-}
 
-variable "cilium_version" {
-  description = "cilium version for the ocp please check https://github.com/isovalent/cilium-ee-olm since olm has a different life cycle from helm release"
+variable "calico_version" {
+  description = "calico version for the ocp"
   type        = string
 
 

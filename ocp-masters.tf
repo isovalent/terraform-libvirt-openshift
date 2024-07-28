@@ -15,7 +15,7 @@
 // The base root volume for the ocp_masters.
 
 resource "libvirt_volume" "ocp_masters_base" {
-  depends_on = [null_resource.aicli_cilium_setup]
+  depends_on = [null_resource.aicli_calico_setup]
   count      = var.ocp_masters_count
   name       = var.ocp_master_ip_mac_hostname_map == "" ? "ocp-masters${count.index}-base" : "${var.ocp_master_ip_mac_hostname_map[count.index][2]}-base"
   pool       = var.libvirt_volume_main_name

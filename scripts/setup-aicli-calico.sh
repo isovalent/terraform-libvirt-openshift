@@ -35,12 +35,11 @@ cp -f /aicli/id_rsa.pub ~/.ssh/
 aicli --offlinetoken $OCP_OFFLINE_TOKEN delete cluster $OCP_CLUSTER_NAME -y || true
 aicli --offlinetoken $OCP_OFFLINE_TOKEN create cluster $OCP_CLUSTER_NAME --pf /aicli/aicli-ocp-config-$OCP_CLUSTER_NAME.yaml 
 aicli --offlinetoken $OCP_OFFLINE_TOKEN download iso $OCP_CLUSTER_NAME -p /aicli/
-#install the cilium for OCP
-curl -o /aicli/cilium-ee-$CILIUM_VERSION.tar.gz https://docs.isovalent.com/public/cilium-ee-olm/cilium-ee-$CILIUM_VERSION.tar.gz
-tar -xvf /aicli/cilium-ee-$CILIUM_VERSION.tar.gz -C /aicli
+#install the calico for OCP
+curl -L -o /aicli/calico-$CALICO_VERSION.tgz https://github.com/projectcalico/calico/releases/download/v$CALICO_VERSION/ocp.tgz
+tar -xvf /aicli/calico-$CALICO_VERSION.tgz -C /aicli
 
 rm -rf  /aicli/ocp-manifests-dir/*
-cp /aicli/cilium.v$CILIUM_VERSION/* /aicli/ocp-manifests-dir 
-#copy over the cilium config and override the default one
-cp /aicli/cluster-network-07-cilium-ciliumconfig.yaml /aicli/ocp-manifests-dir
+cp /aicli/ocp/* /aicli/ocp-manifests-dir 
+#copy over the calico config and override the default one
 aicli create manifests --dir /aicli/ocp-manifests-dir $OCP_CLUSTER_NAME

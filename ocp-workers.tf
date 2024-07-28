@@ -15,7 +15,7 @@
 // The base root volume for the ocp_workers.
 
 resource "libvirt_volume" "ocp_workers_base" {
-  depends_on = [null_resource.aicli_cilium_setup]
+  depends_on = [null_resource.aicli_calico_setup]
   count      = var.ocp_workers_count
   name       = var.ocp_worker_ip_mac_hostname_map == "" ? "ocp-workers${count.index}-base" : "${var.ocp_worker_ip_mac_hostname_map[count.index][2]}-base"
   pool       = var.libvirt_volume_main_name
