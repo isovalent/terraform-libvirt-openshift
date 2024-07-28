@@ -1,6 +1,6 @@
 ## Overall
 
-This module will deploy OpenShift with calico on the KVM hypervisor through Terraform Libvirt and aicli (https://github.com/karmab/aicli). It currently works with https://github.com/isovalent/terraform-equinix-infra modules to create the OpenShift VMs on Equinix Metal. In theory, it should work with any KVM hypervisor and may need more tweaks.
+This module will deploy OpenShift with calico based on the main branch on the KVM hypervisor through Terraform Libvirt and aicli (https://github.com/karmab/aicli). It currently works with https://github.com/isovalent/terraform-equinix-infra modules to create the OpenShift VMs on Equinix Metal. In theory, it should work with any KVM hypervisor and may need more tweaks.
 
 A lot of predefined configurations from the terraform-equinix-infra module on the router are for this module to deliver a seamless user experience when consuming OpenShift.
 
