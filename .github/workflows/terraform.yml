@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - main
+      - calico
 jobs:
   formatting:
     runs-on: ubuntu-22.04
